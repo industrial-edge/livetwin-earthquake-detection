@@ -21,7 +21,7 @@ Running a simulation model on the edge device using Siemens app LiveTwin.
 This application example shows how to export Simulink virtual sensor model and run it on a edge device with LiveTwin edge application. The model can read data from PLC and send the current status back to the PLC. 
 
 ### General task
-The main goal of this automation task is to create Simulink model that simulates shock sensor, export it in the required format and run it on the edge device using LiveTwin. The edge device can read data from PLC simulating vibrations via Simatic Flow Creator system application using S7 comunication protocol. The model can evaluate whether the vibrations have occurred and send the current shock status back to PLC. The data flow can be visualize by using Simatic Flow Creator application.
+The main goal of this automation task is to create Simulink model that simulates shock sensor, export it in the required format and run it on the edge device using LiveTwin. The edge device can read data from PLC simulating vibrations via integrated S7 Connector using S7 communication protocol. Based on logic in Flow Creator, the model can evaluate whether the vibrations have occurred and send the current shock status back to PLC. The data flow can be visualized directly in LiveTwin. 
 
 
 <img src="docs/graphics/livetwin_task1.PNG" width="500"/>
@@ -56,10 +56,10 @@ You can find the further information about the following steps in the [docs](doc
 - Export Simulink model 
 - Import the model to LiveTwin  
   - Create instance
-  - Create Flow Creator project
-- Configure the Flow Creator project properties
-- Configure S7 Connector 
+  - Create LiveTwin project
+- Configure the LiveTwin project properties
 - Configure Databus 
+- Configure S7 Connector 
 - Run the simulation 
   - Visualize the data 
   - Send shock status back to PLC
