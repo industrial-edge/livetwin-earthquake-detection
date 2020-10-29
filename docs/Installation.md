@@ -7,6 +7,8 @@
   - [Import the model to LiveTwin](#import-the-model-to-livetwin)
     - [Create template](#create-template)
     - [Create LiveTwin project](#create-livetwin-project)
+  - [Simulation configuration](#simulation-configuration)
+    - [Databus configuration](#databus-configuration)
 
 
 ## Configure PLC project
@@ -51,3 +53,38 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 
 ### Create LiveTwin project 
 
+1) Go to the "Projects" section in the "LiveTwin studio" menu and click on the "plus" button to add project. 
+   
+<img src="docs/graphics/add_project.PNG" width="300"/>
+
+2) Navigate to the "Projects" area and fill the following information: 
+  - Select your "Template"
+  - Select "LiveTwin" as a "Project Type"
+  - Give the project a name 
+  - Choose "Simulation Step" and "Project Cyclic Time" based on your reguirements
+
+<img src="docs/graphics/new_project.PNG" width="700"/>
+
+3) Click "Save&Close". The new LiveTwin project is created. 
+
+## Simulation configuration
+
+In order to finish this automation task, we need to read/write data from/to PLC. In this use case, we will use S7 Connector system application to establish connection with PLC using S7 and OPC comunnication protocols. S7 connector is also connected to Databus and LiveTwin can then access the data from Databus via MQTT protocol. In order to establish this infrastructure, follow these instructions: 
+
+
+### Databus configuration
+1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
+2) Click on the "IE Databus" application item. 
+3) Click on the "Update Configuration" button, new configuration file appears. 
+4) Select you edge device and click on "Launch Configurator", Databus Configuration window appears. 
+
+
+5) Configure the following information: 
+ ```txt
+   User name: edge 
+   Password: edge 
+   Topic: ie/# 
+   Permission: Publish and Subscribe
+
+   ```
+<img src="docs/graphics/databus.gif" width="1000"/>
