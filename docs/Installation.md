@@ -9,6 +9,7 @@
     - [Create LiveTwin project](#create-livetwin-project)
   - [Simulation configuration](#simulation-configuration)
     - [Databus configuration](#databus-configuration)
+    - [S7 Connector configuration](#s7-connector-configuration)
 
 
 ## Configure PLC project
@@ -74,7 +75,7 @@ In order to finish this automation task, we need to read/write data from/to PLC.
 
 ### Databus configuration
 1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
-2) Click on the "IE Databus" application item. 
+2) Click on the "IE Databus" application icon. 
 3) Click on the "Update Configuration" button, new configuration file appears. 
 4) Select you edge device and click on "Launch Configurator", Databus Configuration window appears. 
 
@@ -88,3 +89,20 @@ In order to finish this automation task, we need to read/write data from/to PLC.
 
    ```
 <img src="docs/graphics/databus.gif" width="1000"/>
+
+### S7 Connector configuration
+For pefrormance purposes, we will use S7 communication protocol for high frequency data simulating vibrations and OPC UA protocol for low frequency data. In order to establish connection with PLC, follow these instructions: 
+
+1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
+2) Click on the "SIMATIC S7 Connector" application icon. 
+3) Click on the "Update Configuration" button, new configuration file appears.
+4) Click on "Add Data Source" button and select "Simatic S7 protocol". 
+5) Click the "plus" button on the rifht side of the data source to add a tag and input: 
+  ```txt
+    Name : accy 
+    Adress: %DB3.DBD2
+    Data Type: Real
+    Acquisition Cycle: 100 ms
+    Acquisition Mode: CyclicOnChange
+    Access Mode: Read
+  ```
