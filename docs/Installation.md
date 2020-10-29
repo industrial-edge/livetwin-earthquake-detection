@@ -96,13 +96,31 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
 1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
 2) Click on the "SIMATIC S7 Connector" application icon. 
 3) Click on the "Update Configuration" button, new configuration file appears.
-4) Click on "Add Data Source" button and select "Simatic S7 protocol". 
-5) Click the "plus" button on the rifht side of the data source to add a tag and input: 
+4) Click on "Add Data Source" button, select "Simatic S7 protocol" and provide following information for this data source: 
+   ```txt
+    Name : plc                           
+    IP Adress: 192.168.80.20
+    PLC Type S7 1500
+  ```
+   
+5) Click the "plus" button on the right side of the data source to add a tag and input: 
+   - Acceleration in direction y: 
   ```txt
-    Name : accy 
+    Name : accy                             
     Adress: %DB3.DBD2
-    Data Type: Real
+    Data Type: Read
     Acquisition Cycle: 100 ms
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
   ```
+
+     - Acceleration in direction x: 
+  ```txt
+    Name : accx                      
+    Adress: %DB3.DBD6
+    Data Type: Read
+    Acquisition Cycle: 100 ms
+    Acquisition Mode: CyclicOnChange
+    Access Mode: Read
+  ```
+
