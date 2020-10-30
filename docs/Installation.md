@@ -47,9 +47,11 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 <img src="docs/graphics/plus_button.PNG" width="300"/>
 
 3) Navigate to the "New Template" area and fill the form: 
+ ```txt
   - Choose a "Name" for your template
   - Select the "Model Type" (in this case Simulink)
   - Browse in the"Model File" for the exported .zip file of the Simuling project. You can find it here: [livetwin template](src/shock_sensor.zip)
+  ```
 
 <img src="docs/graphics/new_template.PNG" width="600"/>
 
@@ -62,10 +64,12 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 <img src="docs/graphics/add_project.PNG" width="300"/>
 
 2) Navigate to the "Projects" area and fill the following information: 
+ ```txt
   - Select your "Template"
   - Select "LiveTwin" as a "Project Type"
   - Give the project a name 
   - Choose "Simulation Step" and "Project Cyclic Time" based on your reguirements
+  ```
 
 <img src="docs/graphics/new_project.PNG" width="700"/>
 
@@ -221,3 +225,5 @@ To run the simulation follow these instructions:
 - Enable vibrations on the PLC ("HMIHandleDB" -> "enableVib" -> "True")
 - Access the dashboard in the LiveTwin UI
 - The shock status is send back to PLC
+
+<img src="docs/graphics/simulation.gif" width="1000"/>
