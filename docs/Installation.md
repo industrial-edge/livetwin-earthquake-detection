@@ -158,7 +158,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
     Bulk publish: Disabled!
   ```
 
-  <img src="docs/graphics/s7_conf.PNG" width="300"/>
+  <img src="docs/graphics/s7_conf.PNG" width="400"/>
 
 
 10) Click "Deploy" and then "Start Project" buttons.
@@ -191,4 +191,6 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
   ```
 Uncheck the "Bulk publish" option. 
 
-3) Click "Save&Close". The new LiveTwin project is created. 
+4) Click "Save&Close". 
+
+<img src="docs/graphics/livetwin_conf.gif" width="1000"/>
