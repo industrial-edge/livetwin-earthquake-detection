@@ -11,6 +11,8 @@
     - [Databus configuration](#databus-configuration)
     - [S7 Connector configuration](#s7-connector-configuration)
     - [LiveTwin project configuration](#livetwin-project-configuration)
+    - [Flow Creator configuration](#flow-creator-configuration)
+  - [Run simulation](#run-simulation)
 
 
 ## Configure PLC project
@@ -87,7 +89,6 @@ In order to finish this automation task, we need to read/write data from/to PLC.
    Password: edge 
    Topic: ie/# 
    Permission: Publish and Subscribe
-
    ```
 <img src="docs/graphics/databus.gif" width="1000"/>
 
@@ -191,6 +192,32 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
   ```
 Uncheck the "Bulk publish" option!
 
+*Note: The output topic will be used in Flow Creator*
+
 4) Click "Save&Close". 
 
 <img src="docs/graphics/livetwin_conf.gif" width="1000"/>
+
+### Flow Creator configuration
+In order to send the shock status back to the PLC we have to create some logic to evaulate whether the shock has been detected or not. We can use Simatic Flow cretor system application to do that. 
+
+1) Open user interface of the Simatic Flow Creator application.
+
+2) Import the [flow.json](../src/flows.json) FLow Creator project. 
+
+3) Deploy the application. 
+
+<img src="docs/graphics/flow_creator.gif" width="1000"/>
+
+
+## Run simulation
+To run the simulation follow these instructions:
+
+- Make sure that PLC is connected to the Edge device and TIA project is downloaded
+- LiveTwin project settings are configured
+- S7 Connector and Databus system applications are configured 
+- Flow Creator project is deployed 
+- Start the simulation of the LiveTwin project 
+- Enable vibrations on the PLC ("HMIHandleDB" -> "enableVib" -> "True")
+- Access the dashboard in the LiveTwin UI
+- The shock status is send back to PLC
