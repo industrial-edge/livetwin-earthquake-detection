@@ -189,7 +189,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
     Password: edge
     Output topic: ie/status
   ```
-Uncheck the "Bulk publish" option. 
+Uncheck the "Bulk publish" option!
 
 4) Click "Save&Close". 
 
