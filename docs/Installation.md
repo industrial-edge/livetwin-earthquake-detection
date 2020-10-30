@@ -97,12 +97,14 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
 2) Click on the "SIMATIC S7 Connector" application icon. 
 3) Click on the "Update Configuration" button, new configuration file appears.
 4) Click on "Add Data Source" button, select "Simatic S7 protocol" and provide following information for this data source: 
-   ```txt
+  ```txt
     Name : plc                           
     IP Adress: 192.168.80.20
     PLC Type S7 1500
   ```
    
+<img src="docs/graphics/s7_data_source.gif" width="1000"/>
+
 5) Click the "plus" button on the right side of the data source to add a tag and input: 
    - Acceleration in direction y: 
   ```txt
@@ -118,9 +120,33 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
   ```txt
     Name : accx                      
     Adress: %DB3.DBD6
-    Data Type: Read
+    Data Type: Real
     Acquisition Cycle: 100 ms
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
   ```
+<img src="docs/graphics/s7_plc.gif" width="1000"/>
 
+6) Click on "Add Data Source", select OPC-UA and fill the following information: 
+   
+```txt
+    Name : plcshock                           
+    OPC-UA URL: opc.tcp://192.168.80.20
+    Port Number: 4840
+    Messaging Mode: None 
+```
+
+7) Click on the file icon on the right side of the data source to enable the "browse" function for tags. 
+
+8) Select "HMIHandleDB_resetShock" tag and configure the tag with these information: 
+  
+```txt
+    Data Type: Real
+    Acquisition Cycle: 1 s
+    Acquisition Mode: CyclicOnChange
+    Access Mode: Read & Write
+```
+
+<img src="docs/graphics/s7_plcshock.gif" width="1000"/>
+
+9) Click "Deploy" and then "Start Project" buttons.
