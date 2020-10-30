@@ -10,6 +10,7 @@
   - [Simulation configuration](#simulation-configuration)
     - [Databus configuration](#databus-configuration)
     - [S7 Connector configuration](#s7-connector-configuration)
+    - [LiveTwin project configuration](#livetwin-project-configuration)
 
 
 ## Configure PLC project
@@ -106,7 +107,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
 <img src="docs/graphics/s7_data_source.gif" width="1000"/>
 
 5) Click the "plus" button on the right side of the data source to add a tag and input: 
-   - Acceleration in direction y: 
+- Acceleration in direction y: 
   ```txt
     Name : accy                             
     Adress: %DB3.DBD2
@@ -116,7 +117,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
     Access Mode: Read
   ```
 
-     - Acceleration in direction x: 
+- Acceleration in direction x: 
   ```txt
     Name : accx                      
     Adress: %DB3.DBD6
@@ -149,4 +150,45 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
 
 <img src="docs/graphics/s7_plcshock.gif" width="1000"/>
 
-9) Click "Deploy" and then "Start Project" buttons.
+9) Go to the "Settings" option in the right top corner and fill the databus properties: 
+
+  ```txt
+    UserName: edge 
+    Password: edge
+    Bulk publish: Disabled!
+  ```
+
+  <img src="docs/graphics/s7_conf.PNG" width="300"/>
+
+
+10) Click "Deploy" and then "Start Project" buttons.
+
+
+### LiveTwin project configuration
+
+1) Go to LiveTwin instance settings. The new configuration window opens. 
+
+2) For the input signals configure: 
+- Accelx:
+    
+  ```txt
+    Data Source: plc 
+    Tag Name: accx
+  ```
+- Accely:
+    
+  ```txt
+    Data Source: plc 
+    Tag Name: accy
+  ```
+
+3) Go to the "Server Settings" (connection to Databus) and insert the Databus properties: 
+   
+  ```txt
+    Username: edge
+    Password: edge
+    Output topic: ie/status
+  ```
+Uncheck the "Bulk publish" option. 
+
+3) Click "Save&Close". The new LiveTwin project is created. 
