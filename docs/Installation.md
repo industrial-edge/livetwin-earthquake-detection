@@ -1,19 +1,16 @@
 # LiveTwin application example 
 
-
 - [LiveTwin application example](#livetwin-application-example)
-  - [Configure PLC project](#configure-plc-project)
-  - [Export Simulink model](#export-simulink-model)
-  - [Import the model to LiveTwin](#import-the-model-to-livetwin)
-    - [Create template](#create-template)
-    - [Create LiveTwin project](#create-livetwin-project)
-  - [Simulation configuration](#simulation-configuration)
-    - [Databus configuration](#databus-configuration)
-    - [S7 Connector configuration](#s7-connector-configuration)
-    - [LiveTwin project configuration](#livetwin-project-configuration)
-    - [Flow Creator configuration](#flow-creator-configuration)
-  - [Run simulation](#run-simulation)
-
+  * [Configure PLC project](#configure-plc-project)
+  * [Export Simulink model](#export-simulink-model)
+  * [Import the model to LiveTwin](#import-the-model-to-livetwin)
+    + [Create template](#create-template)
+    + [Create LiveTwin project](#create-livetwin-project)
+  * [Simulation configuration](#simulation-configuration)
+    + [IE Databus configuration](#ie-databus-configuration)
+    + [SIMATIC S7 Connector configuration](#simatic-s7-connector-configuration)
+    + [LiveTwin project configuration](#livetwin-project-configuration)
+    + [SIMATIC Flow Creator configurat
 
 ## Configure PLC project
 1) Open TIA portal and open the project: [TIA project](../src/Shock_detection1500.zip). 
@@ -35,7 +32,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 ## Import the model to LiveTwin 
 
 *Prerequisities:*
- - *LiveTwin and Flow Creator applications are running on edge device*
+ - *LiveTwin and SIMATIC Flow Creator applications are running on the Industrial Edge Device*
 
 
 
@@ -50,7 +47,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
  ```txt
   - Choose a "Name" for your template
   - Select the "Model Type" (in this case Simulink)
-  - Browse in the"Model File" for the exported .zip file of the Simuling project. You can find it here: [livetwin template](src/shock_sensor.zip)
+  - Browse in the "Model File" for the exported .zip file of the Simulink project. You can find it here: [livetwin template](src/shock_sensor.zip)
   ```
 
 <img src="docs/graphics/new_template.PNG" width="600"/>
@@ -68,7 +65,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
   - Select your "Template"
   - Select "LiveTwin" as a "Project Type"
   - Give the project a name 
-  - Choose "Simulation Step" and "Project Cyclic Time" based on your reguirements
+  - Choose "Simulation Step" and "Project Cyclic Time" based on your requirements
   ```
 
 <img src="docs/graphics/new_project.PNG" width="700"/>
@@ -77,14 +74,14 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 
 ## Simulation configuration
 
-In order to finish this automation task, we need to read/write data from/to PLC. In this use case, we will use S7 Connector system application to establish connection with PLC using S7 and OPC comunnication protocols. S7 connector is also connected to Databus and LiveTwin can then access the data from Databus via MQTT protocol. In order to establish this infrastructure, follow these instructions: 
+In order to finish this automation task, we need to read/write data from/to PLC. In this use case, we will use SIMATIC S7 Connector system application to establish connection with PLC using S7 and OPC comunnication protocols. The SIMATIC S7 Connector is also connected to the IE Databus and LiveTwin can then access the data from IE Databus via the MQTT protocol. In order to establish this infrastructure, follow these instructions: 
 
 
-### Databus configuration
+### IE Databus configuration
 1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
 2) Click on the "IE Databus" application icon. 
 3) Click on the "Update Configuration" button, new configuration file appears. 
-4) Select you edge device and click on "Launch Configurator", Databus Configuration window appears. 
+4) Select you edge device and click on "Launch Configurator", IE Databus Configuration window appears. 
 
 
 5) Configure the following information: 
@@ -96,8 +93,8 @@ In order to finish this automation task, we need to read/write data from/to PLC.
    ```
 <img src="docs/graphics/databus.gif" width="1000"/>
 
-### S7 Connector configuration
-For pefrormance purposes, we will use S7 communication protocol for high frequency data simulating vibrations and OPC UA protocol for low frequency data. In order to establish connection with PLC, follow these instructions: 
+### SIMATIC S7 Connector configuration
+For performance purposes, we will use the S7 communication protocol for high frequency data simulating vibrations and OPC UA protocol for low frequency data. In order to establish connection with the PLC, follow these instructions: 
 
 1) Go to the "My Installed Apps" section of the Industrial Edge Management System. 
 2) Click on the "SIMATIC S7 Connector" application icon. 
@@ -105,8 +102,8 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
 4) Click on "Add Data Source" button, select "Simatic S7 protocol" and provide following information for this data source: 
   ```txt
     Name : plc                           
-    IP Adress: 192.168.80.20
-    PLC Type S7 1500
+    IP Adress: IP of PLC, for example 192.168.80.20
+    PLC Type: 1200/1500
   ```
    
 <img src="docs/graphics/s7_data_source.gif" width="1000"/>
@@ -116,7 +113,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
   ```txt
     Name : accy                             
     Adress: %DB3.DBD2
-    Data Type: Read
+    Data Type: Real
     Acquisition Cycle: 100 ms
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
@@ -187,7 +184,7 @@ For pefrormance purposes, we will use S7 communication protocol for high frequen
     Tag Name: accy
   ```
 
-3) Go to the "Server Settings" (connection to Databus) and insert the Databus properties: 
+3) Go to the "Server Settings" (connection to IE Databus) and insert the Databus properties: 
    
   ```txt
     Username: edge
@@ -202,12 +199,12 @@ Uncheck the "Bulk publish" option!
 
 <img src="docs/graphics/livetwin_conf.gif" width="1000"/>
 
-### Flow Creator configuration
-In order to send the shock status back to the PLC we have to create some logic to evaulate whether the shock has been detected or not. We can use Simatic Flow cretor system application to do that. 
+### SIMATIC Flow Creator configuration
+In order to send the shock status back to the PLC we have to create some logic to evaulate whether the shock has been detected or not. We can use the SIMATIC Flow Creator application to do that. 
 
-1) Open user interface of the Simatic Flow Creator application.
+1) Open user interface of the SIMATIC Flow Creator application.
 
-2) Import the [flow.json](../src/flows.json) FLow Creator project. 
+2) Import the [flow.json](../src/flows.json) Flow Creator project. 
 
 3) Deploy the application. 
 
@@ -217,10 +214,10 @@ In order to send the shock status back to the PLC we have to create some logic t
 ## Run simulation
 To run the simulation follow these instructions:
 
-- Make sure that PLC is connected to the Edge device and TIA project is downloaded
+- Make sure that PLC is connected to the Industrial Edge Device and TIA project is downloaded and running on the PLC
 - LiveTwin project settings are configured
-- S7 Connector and Databus system applications are configured 
-- Flow Creator project is deployed 
+- SIMATIC S7 Connector and IE Databus system applications are configured 
+- SIMATIC Flow Creator project is deployed 
 - Start the simulation of the LiveTwin project 
 - Enable vibrations on the PLC ("HMIHandleDB" -> "enableVib" -> "True")
 - Access the dashboard in the LiveTwin UI
