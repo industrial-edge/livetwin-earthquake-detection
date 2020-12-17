@@ -53,7 +53,7 @@ The main goal of this automation task is to create Simulink model that simulates
 
 
 ## Installation steps
-You can find the further information about the following steps in the [docs](docs/Installation.md)
+You can find the further information about the following steps in the [Installation](docs/Installation.md) documentation
 - Export Simulink model 
 - Import the model to LiveTwin  
   - Create instance

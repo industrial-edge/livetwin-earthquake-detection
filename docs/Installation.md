@@ -47,8 +47,10 @@ The Simulink model for this use case is already in this repository: [Shock-senso
  ```txt
   - Choose a "Name" for your template
   - Select the "Model Type" (in this case Simulink)
-  - Browse in the "Model File" for the exported .zip file of the Simulink project. You can find it here: [livetwin template](src/shock_sensor.zip)
+  - Browse in the "Model File" for the exported .zip file of the Simulink project. 
+
   ```
+You can find Simulink project here: [livetwin template](src/shock_sensor.zip)
 
 <img src="docs/graphics/new_template.PNG" width="600"/>
 
@@ -137,6 +139,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     OPC-UA URL: opc.tcp://192.168.80.20
     Port Number: 4840
     Messaging Mode: None 
+    Authentication Mode: Anonymous
 ```
 
 7) Click on the file icon on the right side of the data source to enable the "browse" function for tags. 
