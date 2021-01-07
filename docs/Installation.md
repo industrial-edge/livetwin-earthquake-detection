@@ -221,6 +221,6 @@ To run the simulation follow these instructions:
 - Start the simulation of the LiveTwin project 
 - Enable vibrations on the PLC ("HMIHandleDB" -> "enableVib" -> "True")
 - Access the dashboard in the LiveTwin UI
-- The shock status is send back to PLC
+- The shock status is send back to PLC. If a shock was detected, the value of the tag "HMIHandleDB" -> "resetShock" is set to 1.
 
 <img src="docs/graphics/simulation.gif" width="1000"/>
