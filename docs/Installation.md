@@ -10,7 +10,7 @@
     + [IE Databus configuration](#ie-databus-configuration)
     + [SIMATIC S7 Connector configuration](#simatic-s7-connector-configuration)
     + [LiveTwin project configuration](#livetwin-project-configuration)
-    + [SIMATIC Flow Creator configurat
+    + [SIMATIC Flow Creator configuration](#simatic-flow-creator-configuration)
 
 ## Configure PLC project
 1) Open TIA portal and open the project: [TIA project](../src/Shock_detection1500.zip). 
