@@ -52,7 +52,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
   ```
 You can find Simulink project here: [livetwin template](src/shock_sensor.zip)
 
-<img src="docs/graphics/new_template.PNG" width="600"/>
+<img src="graphics/new_template.PNG" width="600"/>
 
 4) Click "Save". The new template is generated. 
 
@@ -60,7 +60,7 @@ You can find Simulink project here: [livetwin template](src/shock_sensor.zip)
 
 1) Go to the "Projects" section in the "LiveTwin studio" menu and click on the "plus" button to add project. 
    
-<img src="docs/graphics/add_project.PNG" width="300"/>
+<img src="graphics/add_project.PNG" width="300"/>
 
 2) Navigate to the "Projects" area and fill the following information: 
  ```txt
@@ -70,7 +70,7 @@ You can find Simulink project here: [livetwin template](src/shock_sensor.zip)
   - Choose "Simulation Step" and "Project Cyclic Time" based on your requirements
   ```
 
-<img src="docs/graphics/new_project.PNG" width="700"/>
+<img src="graphics/new_project.PNG" width="700"/>
 
 3) Click "Save&Close". The new LiveTwin project is created. 
 
@@ -93,7 +93,7 @@ In order to finish this automation task, we need to read/write data from/to PLC.
    Topic: ie/# 
    Permission: Publish and Subscribe
    ```
-<img src="docs/graphics/databus.gif" width="1000"/>
+<img src="graphics/databus.gif" width="1000"/>
 
 ### SIMATIC S7 Connector configuration
 For performance purposes, we will use the S7 communication protocol for high frequency data simulating vibrations and OPC UA protocol for low frequency data. In order to establish connection with the PLC, follow these instructions: 
@@ -108,7 +108,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     PLC Type: 1200/1500
   ```
    
-<img src="docs/graphics/s7_data_source.gif" width="1000"/>
+<img src="graphics/s7_data_source.gif" width="1000"/>
 
 5) Click the "plus" button on the right side of the data source to add a tag and input: 
 - Acceleration in direction y: 
@@ -130,7 +130,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
   ```
-<img src="docs/graphics/s7_plc.gif" width="1000"/>
+<img src="graphics/s7_plc.gif" width="1000"/>
 
 6) Click on "Add Data Source", select OPC-UA and fill the following information: 
    
@@ -153,7 +153,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     Access Mode: Read & Write
 ```
 
-<img src="docs/graphics/s7_plcshock.gif" width="1000"/>
+<img src="graphics/s7_plcshock.gif" width="1000"/>
 
 9) Go to the "Settings" option in the right top corner and fill the databus properties: 
 
@@ -163,7 +163,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     Bulk publish: Disabled!
   ```
 
-  <img src="docs/graphics/s7_conf.PNG" width="400"/>
+  <img src="graphics/s7_conf.PNG" width="400"/>
 
 
 10) Click "Deploy" and then "Start Project" buttons.
@@ -200,7 +200,7 @@ Uncheck the "Bulk publish" option!
 
 4) Click "Save&Close". 
 
-<img src="docs/graphics/livetwin_conf.gif" width="1000"/>
+<img src="graphics/livetwin_conf.gif" width="1000"/>
 
 ### SIMATIC Flow Creator configuration
 In order to send the shock status back to the PLC we have to create some logic to evaulate whether the shock has been detected or not. We can use the SIMATIC Flow Creator application to do that. 
@@ -211,7 +211,7 @@ In order to send the shock status back to the PLC we have to create some logic t
 
 3) Deploy the application. 
 
-<img src="docs/graphics/flow_creator.gif" width="1000"/>
+<img src="graphics/flow_creator.gif" width="1000"/>
 
 
 ## Run simulation
@@ -226,4 +226,4 @@ To run the simulation follow these instructions:
 - Access the dashboard in the LiveTwin UI
 - The shock status is send back to PLC. If a shock was detected, the value of the tag "HMIHandleDB" -> "resetShock" is set to 1.
 
-<img src="docs/graphics/simulation.gif" width="1000"/>
+<img src="graphics/simulation.gif" width="1000"/>
