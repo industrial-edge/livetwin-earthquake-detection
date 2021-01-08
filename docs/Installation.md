@@ -17,7 +17,7 @@
 
 2) Download the PLC program to PLC (It is also possible to use PLCSIM advance).
 
-3) Feel free to simulate and configure provided HMI (*HMI_TP700/Screens/Applications/51_LiveTwin*) to control the PLC program. 
+3) (Optional) Feel free to simulate and configure provided HMI (*HMI_TP700/Screens/Applications/51_LiveTwin*) to control the PLC program. 
   
 
 
