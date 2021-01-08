@@ -41,7 +41,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
 
 2) Go to the Libraries are and click on the "plus" button to add a template. New tab pop up in the working area. 
 
-<img src="docs/graphics/plus_button.PNG" width="300"/>
+<img src="graphics/plus_button.PNG" width="300"/>
 
 3) Navigate to the "New Template" area and fill the form: 
  ```txt
