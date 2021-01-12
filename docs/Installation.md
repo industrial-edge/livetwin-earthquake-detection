@@ -50,7 +50,7 @@ The Simulink model for this use case is already in this repository: [Shock-senso
   - Browse in the "Model File" for the exported .zip file of the Simulink project. 
 
   ```
-You can find Simulink project here: [livetwin template](src/shock_sensor.zip)
+You can find Simulink project here: [livetwin template](../src/shock_sensor.zip)
 
 <img src="graphics/new_template.PNG" width="600"/>
 
