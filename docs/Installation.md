@@ -25,7 +25,7 @@
 
 *Note: Matlab 2019b is used in this example*
 
-Documentation for exporting your own Simulink model can be found here: [documentation](export_simulink_model.md)
+If you are interested in exporting your own Simulink model, the documentation can be found here: [documentation](export_simulink_model.md)
 
 The Simulink model for this use case is already in this repository: [Shock-sensor-model](../src/shock_sensor.zip)
 
