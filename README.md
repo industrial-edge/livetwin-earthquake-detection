@@ -47,7 +47,7 @@ The main goal of this automation task is to create Simulink model that simulates
 - SIMATIC S7 Connector V 1.2.26 
 - SIMATIC S7 Connector Configurator V 1.2.32
 - IE Databus V 1.2.32
-- IE Databus Configurator V 1.1.23
+- IE Databus Configurator V 1.2.23
 - SIMATIC Flow Creator V 1.0.5
 - LiveTwin V1.0.5
 
