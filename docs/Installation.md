@@ -116,7 +116,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     Name : accy                             
     Adress: %DB3.DBD2
     Data Type: Real
-    Acquisition Cycle: 100 ms
+    Acquisition Cycle: 10 ms
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
   ```
@@ -126,7 +126,7 @@ For performance purposes, we will use the S7 communication protocol for high fre
     Name : accx                      
     Adress: %DB3.DBD6
     Data Type: Real
-    Acquisition Cycle: 100 ms
+    Acquisition Cycle: 10 ms
     Acquisition Mode: CyclicOnChange
     Access Mode: Read
   ```
