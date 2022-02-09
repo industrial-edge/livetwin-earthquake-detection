@@ -45,9 +45,9 @@ The main goal of this automation task is to create Simulink model that simulates
 - TIA Portal V16 
 - Matlab 2019b
 - SIMATIC S7 Connector V 1.2.26 
-- SIMATIC S7 Connector Configurator V 1.2.32
+- SIMATIC S7 Connector Configurator V 1.2.16
 - IE Databus V 1.2.32
-- IE Databus Configurator V 1.2.23
+- IE Databus Configurator V 1.2.29
 - SIMATIC Flow Creator V 1.0.5
 - LiveTwin V1.0.5
 
